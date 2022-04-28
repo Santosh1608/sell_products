@@ -4,8 +4,9 @@ name: tests-payments
 
 # Controls when the workflow will run
 on:
-  pull_request
-
+  pull_request:
+    paths:
+      - "payments/**"
 
 jobs:
   build:
@@ -14,5 +15,3 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: cd payments && npm install && npm run test:ci
-
-     

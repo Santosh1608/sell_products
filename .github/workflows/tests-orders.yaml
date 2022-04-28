@@ -4,8 +4,9 @@ name: tests-orders
 
 # Controls when the workflow will run
 on:
-  pull_request
-
+  pull_request:
+    paths:
+      - "orders/**"
 
 jobs:
   build:
@@ -14,5 +15,3 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: cd orders && npm install && npm run test:ci
-
-     
